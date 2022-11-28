@@ -121,7 +121,7 @@ namespace Okex.Net
             if (instrumentType.IsNotIn(OkexInstrumentType.Futures, OkexInstrumentType.Option, OkexInstrumentType.Swap))
                 throw new ArgumentException("Instrument Type can be only Futures, Option or Swap.");
 
-            if (instrumentType == OkexInstrumentType.Swap && string.IsNullOrEmpty(underlying))
+            if (instrumentType == OkexInstrumentType.Option && string.IsNullOrEmpty(underlying))
                 throw new ArgumentException("Underlying is required for Option.");
 
             var parameters = new Dictionary<string, object>
